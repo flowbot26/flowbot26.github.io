@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact - Usinagem e Caldeiraria</title>
+    <!-- Importando fonte robusta -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --azul-industrial: #00468c; /* Azul extraído da imagem */
+            --azul-escuro: #002d5a;
+            --cinza-claro: #f4f7f6;
+            --branco: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--branco);
+            color: #333;
+        }
+
+        /* Fundo com Engrenagens Sutil */
+        .bg-pattern {
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-color: var(--branco);
+        }
+
+        header {
+            background-color: var(--branco);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--azul-industrial);
+        }
+
+        .logo {
+            max-width: 300px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 70, 140, 0.9), rgba(0, 45, 90, 0.9)), 
+                        url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        /* Seção de Serviços */
+        .servicos {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .titulo-secao {
+            text-align: center;
+            color: var(--azul-industrial);
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .grid-servicos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--cinza-claro);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 6px solid var(--azul-industrial);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: #e9ecef;
+        }
+
+        .card i {
+            color: var(--azul-industrial);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin: 0 0 10px 0;
+            color: var(--azul-escuro);
+        }
+
+        /* Seção Contato e Orçamento */
+        .contato {
+            background-color: var(--azul-industrial);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .contatos-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128c7e;
+        }
+
+        .info-contato h4 {
+            margin: 5px 0;
+            font-size: 1.2rem;
+        }
+
+        /* Rodapé e Localização */
+        footer {
+            padding: 40px 20px;
+            background: #f8f9fa;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .endereco {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body class="bg-pattern">
+
+    <header>
+        <!-- Simulação do Logo conforme imagem -->
+        <div style="font-size: 40px; font-weight: 900; color: black; display: flex; align-items: center; justify-content: center;">
+            IMPACT <i class="fas fa-cog" style="margin-left: 10px; color: black;"></i>
+        </div>
+        <div style="color: var(--azul-industrial); font-weight: bold; letter-spacing: 2px;">USINAGEM E CALDEIRARIA</div>
+    </header>
+
+    <section class="hero">
+        <h1>Precisão e Qualidade Industrial</h1>
+        <p>Soluções em usinagem de moldes, soldas especiais e caldeiraria em Joinville.</p>
+        <br>
+        <a href="#orcamento" style="background: var(--branco); color: var(--azul-industrial); padding: 15px 40px; text-decoration: none; font-weight: bold; border-radius: 5px; text-transform: uppercase;">Solicite um Orçamento</a>
+    </section>
+
+    <section class="servicos">
+        <h2 class="titulo-secao">Nossos Serviços</h2>
+        <div class="grid-servicos">
+            <div class="card">
+                <i class="fas fa-microchip"></i>
+                <h3>Usinagem de Precisão</h3>
+                <p>Especialistas em moldes, cavidades e componentes em geral com rigoroso controle de qualidade.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-tools"></i>
+                <h3>Peças Técnicas</h3>
+                <p>Desenvolvimento e fabricação de peças conforme desenho ou amostra técnica.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-industry"></i>
+                <h3>Caldeiraria em Geral</h3>
+                <p>Fabricação de estruturas, armações e montagens industriais sob demanda.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-fire"></i>
+                <h3>Soldas Especiais</h3>
+                <p>Serviços profissionais de soldagem TIG e MIG para diversos tipos de metais.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contato" id="orcamento">
+        <h2>ENTRE EM CONTATO</h2>
+        <p>Fale diretamente com nossos responsáveis técnicos:</p>
+        
+        <div class="contatos-container">
+            <div class="info-contato">
+                <h4>Roberto Pinheiro</h4>
+                <a href="https://wa.me/5547999785751" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> (47) 9 9978-5751
+                </a>
+            </div>
+            <div class="info-contato">
+                <h4>Gustavo Pinheiro</h4>
+                <a href="https://wa.me/5547996228039" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> (47) 9 9622-8039
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="endereco">
+            <i class="fas fa-map-marker-alt" style="color: var(--azul-industrial);"></i><br>
+            R. Tupy, 80 - São Marcos<br>
+            Joinville - SC, 89214-400
+        </div>
+        <p>&copy; 2024 Impact Usinagem e Caldeiraria - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
