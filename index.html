@@ -3,233 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impact - Usinagem e Caldeiraria</title>
-    <!-- Importando fonte robusta -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome para ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <title>FlowBot | Planos de Automação Inteligente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --azul-industrial: #00468c; /* Azul extraído da imagem */
-            --azul-escuro: #002d5a;
-            --cinza-claro: #f4f7f6;
-            --branco: #ffffff;
+        body { font-family: 'Inter', sans-serif; background-color: #030712; color: #f3f4f6; }
+        .gradient-text {
+            background: linear-gradient(90deg, #60a5fa, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--branco);
-            color: #333;
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
-        /* Fundo com Engrenagens Sutil */
-        .bg-pattern {
-            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
-            background-color: var(--branco);
+        .hero-glow {
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.15) 0%, rgba(3, 7, 18, 0) 70%);
+            z-index: -1;
         }
-
-        header {
-            background-color: var(--branco);
-            padding: 20px;
-            text-align: center;
-            border-bottom: 5px solid var(--azul-industrial);
-        }
-
-        .logo {
-            max-width: 300px;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 70, 140, 0.9), rgba(0, 45, 90, 0.9)), 
-                        url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        /* Seção de Serviços */
-        .servicos {
-            padding: 60px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .titulo-secao {
-            text-align: center;
-            color: var(--azul-industrial);
-            font-size: 2rem;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .grid-servicos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: var(--cinza-claro);
-            padding: 30px;
-            border-radius: 8px;
-            border-left: 6px solid var(--azul-industrial);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            background: #e9ecef;
-        }
-
-        .card i {
-            color: var(--azul-industrial);
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            margin: 0 0 10px 0;
-            color: var(--azul-escuro);
-        }
-
-        /* Seção Contato e Orçamento */
-        .contato {
-            background-color: var(--azul-industrial);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .contatos-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .btn-whatsapp {
-            background-color: #25d366;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: background 0.3s;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #128c7e;
-        }
-
-        .info-contato h4 {
-            margin: 5px 0;
-            font-size: 1.2rem;
-        }
-
-        /* Rodapé e Localização */
-        footer {
-            padding: 40px 20px;
-            background: #f8f9fa;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        .endereco {
-            margin-bottom: 20px;
-            color: #666;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 1.8rem; }
-        }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-pattern">
+<body>
 
-    <header>
-        <!-- Simulação do Logo conforme imagem -->
-        <div style="font-size: 40px; font-weight: 900; color: black; display: flex; align-items: center; justify-content: center;">
-            IMPACT <i class="fas fa-cog" style="margin-left: 10px; color: black;"></i>
+    <!-- Header -->
+    <nav class="fixed w-full z-50 glass py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-2xl font-800 tracking-tighter flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-robot text-white text-sm"></i>
+                </div>
+                <span>FLOW<span class="text-blue-500">BOT</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+                <a href="#home" class="hover:text-white transition">Home</a>
+                <a href="#planos" class="hover:text-white transition">Planos</a>
+                <a href="#contato" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">Falar com Consultor</a>
+            </div>
         </div>
-        <div style="color: var(--azul-industrial); font-weight: bold; letter-spacing: 2px;">USINAGEM E CALDEIRARIA</div>
-    </header>
+    </nav>
 
-    <section class="hero">
-        <h1>Precisão e Qualidade Industrial</h1>
-        <p>Soluções em usinagem de moldes, soldas especiais e caldeiraria em Joinville.</p>
-        <br>
-        <a href="#orcamento" style="background: var(--branco); color: var(--azul-industrial); padding: 15px 40px; text-decoration: none; font-weight: bold; border-radius: 5px; text-transform: uppercase;">Solicite um Orçamento</a>
-    </section>
-
-    <section class="servicos">
-        <h2 class="titulo-secao">Nossos Serviços</h2>
-        <div class="grid-servicos">
-            <div class="card">
-                <i class="fas fa-microchip"></i>
-                <h3>Usinagem de Precisão</h3>
-                <p>Especialistas em moldes, cavidades e componentes em geral com rigoroso controle de qualidade.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-tools"></i>
-                <h3>Peças Técnicas</h3>
-                <p>Desenvolvimento e fabricação de peças conforme desenho ou amostra técnica.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-industry"></i>
-                <h3>Caldeiraria em Geral</h3>
-                <p>Fabricação de estruturas, armações e montagens industriais sob demanda.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-fire"></i>
-                <h3>Soldas Especiais</h3>
-                <p>Serviços profissionais de soldagem TIG e MIG para diversos tipos de metais.</p>
-            </div>
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-16 overflow-hidden">
+        <div class="hero-glow"></div>
+        <div class="container mx-auto px-6 text-center">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest text-blue-400 uppercase bg-blue-400/10 border border-blue-400/20 rounded-full">
+                Soluções para o seu Comércio
+            </span>
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-8 leading-tight">
+                Planos que resolvem seu <br>
+                <span class="gradient-text">Gargalo de Atendimento</span>
+            </h1>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
+                Escolha a solução ideal para o seu volume de vendas e transforme seu WhatsApp em uma máquina de lucro.
+            </p>
         </div>
     </section>
 
-    <section class="contato" id="orcamento">
-        <h2>ENTRE EM CONTATO</h2>
-        <p>Fale diretamente com nossos responsáveis técnicos:</p>
-        
-        <div class="contatos-container">
-            <div class="info-contato">
-                <h4>Roberto Pinheiro</h4>
-                <a href="https://wa.me/5547999785751" class="btn-whatsapp">
-                    <i class="fab fa-whatsapp"></i> (47) 9 9978-5751
-                </a>
-            </div>
-            <div class="info-contato">
-                <h4>Gustavo Pinheiro</h4>
-                <a href="https://wa.me/5547996228039" class="btn-whatsapp">
-                    <i class="fab fa-whatsapp"></i> (47) 9 9622-8039
-                </a>
+    <!-- Seção de Planos -->
+    <section id="planos" class="py-12 pb-24">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Plano 1 - Verde -->
+                <div class="glass p-8 rounded-3xl border-emerald-500/20 flex flex-col hover:border-emerald-500/50 transition-all">
+                    <div class="mb-4 text-emerald-400 font-bold uppercase text-xs tracking-widest">Foco: Responder Rápido</div>
+                    <h3 class="text-xl font-bold mb-1">🟢 "Não Respondeu, Perdeu"</h3>
+                    <p class="text-gray-500 text-sm mb-6 font-semibold italic">👉 Para comércios pequenos</p>
+                    
+                    <div class="mb-6 p-4 bg-emerald-500/5 rounded-2xl border border-emerald-500/10">
+                        <div class="text-emerald-400 text-3xl font-extrabold">R$ 79<span class="text-sm text-gray-500 font-normal">/mês</span></div>
+                        <div class="text-gray-400 text-xs mt-1">Instalação: R$ 197</div>
+                    </div>
+
+                    <p class="text-xs font-bold text-gray-300 uppercase mb-4">O que resolve:</p>
+                    <ul class="space-y-4 text-sm text-gray-400 mb-8 flex-grow">
+                        <li class="flex items-start gap-2"><i class="fas fa-bolt text-emerald-500 mt-1"></i> Resposta automática imediata</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-clock text-emerald-500 mt-1"></i> Mensagem fora do horário</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-emerald-500 mt-1"></i> Direcionamento simples</li>
+                    </ul>
+                    <a href="https://wa.me/seunumero" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-center font-bold transition">Contratar Plano</a>
+                </div>
+
+                <!-- Plano 2 - Azul -->
+                <div class="glass p-8 rounded-3xl border-blue-500/20 flex flex-col hover:border-blue-500/50 transition-all">
+                    <div class="mb-4 text-blue-400 font-bold uppercase text-xs tracking-widest">Foco: Bagunça no Atendimento</div>
+                    <h3 class="text-xl font-bold mb-1">🔵 "WhatsApp Organizado"</h3>
+                    <p class="text-gray-500 text-sm mb-6 font-semibold italic">👉 Lojas e serviços com volume</p>
+                    
+                    <div class="mb-6 p-4 bg-blue-500/5 rounded-2xl border border-blue-500/10">
+                        <div class="text-blue-400 text-3xl font-extrabold">R$ 139<span class="text-sm text-gray-500 font-normal">/mês</span></div>
+                        <div class="text-gray-400 text-xs mt-1">Instalação: R$ 497</div>
+                    </div>
+
+                    <p class="text-xs font-bold text-gray-300 uppercase mb-4">O que resolve:</p>
+                    <ul class="space-y-4 text-sm text-gray-400 mb-8 flex-grow">
+                        <li class="flex items-start gap-2"><i class="fas fa-list-check text-blue-500 mt-1"></i> Cliente escolhe o que quer</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-sitemap text-blue-500 mt-1"></i> Atendimento organizado</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-filter text-blue-500 mt-1"></i> Menos mensagens perdidas</li>
+                    </ul>
+                    <a href="https://wa.me/seunumero" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-center font-bold transition">Contratar Plano</a>
+                </div>
+
+                <!-- Plano 3 - Roxo -->
+                <div class="glass p-8 rounded-3xl border-purple-500/40 flex flex-col bg-purple-500/5 relative shadow-xl shadow-purple-500/5">
+                    <div class="mb-4 text-purple-400 font-bold uppercase text-xs tracking-widest">Foco: Vender + Agendar</div>
+                    <h3 class="text-xl font-bold mb-1">🟣 "Vende Enquanto Trabalha"</h3>
+                    <p class="text-gray-500 text-sm mb-6 font-semibold italic">👉 Clínicas, salões e serviços</p>
+                    
+                    <div class="mb-6 p-4 bg-purple-500/10 rounded-2xl border border-purple-500/20">
+                        <div class="text-purple-400 text-3xl font-extrabold">R$ 197<span class="text-sm text-gray-500 font-normal">/mês</span></div>
+                        <div class="text-gray-400 text-xs mt-1 font-bold">Instalação: R$ 897</div>
+                    </div>
+
+                    <p class="text-xs font-bold text-gray-300 uppercase mb-4">O que resolve:</p>
+                    <ul class="space-y-4 text-sm text-gray-300 mb-8 flex-grow">
+                        <li class="flex items-start gap-2"><i class="fas fa-calendar-check text-purple-500 mt-1 text-lg"></i> Atendimento 24h</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-user-graduate text-purple-500 mt-1 text-lg"></i> Qualificação automática</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-handshake text-purple-500 mt-1 text-lg"></i> Cliente pronto pra fechar</li>
+                    </ul>
+                    <a href="https://wa.me/seunumero" class="w-full py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-xl text-center font-bold transition">Contratar Plano</a>
+                </div>
+
+                <!-- Plano 4 - Vermelho -->
+                <div class="glass p-8 rounded-3xl border-red-500/20 flex flex-col hover:border-red-500/50 transition-all">
+                    <div class="mb-4 text-red-400 font-bold uppercase text-xs tracking-widest">Foco: Equipe + Escala</div>
+                    <h3 class="text-xl font-bold mb-1">🔴 "Loja Cheia, Whats Fluindo"</h3>
+                    <p class="text-gray-500 text-sm mb-6 font-semibold italic">👉 Lojas grandes</p>
+                    
+                    <div class="mb-6 p-4 bg-red-500/5 rounded-2xl border border-red-500/10">
+                        <div class="text-red-400 text-3xl font-extrabold">R$ 297<span class="text-sm text-gray-500 font-normal">/mês</span></div>
+                        <div class="text-gray-400 text-xs mt-1">Instalação: R$ 1.497</div>
+                    </div>
+
+                    <p class="text-xs font-bold text-gray-300 uppercase mb-4">O que resolve:</p>
+                    <ul class="space-y-4 text-sm text-gray-400 mb-8 flex-grow">
+                        <li class="flex items-start gap-2"><i class="fas fa-users-gear text-red-500 mt-1"></i> Direcionamento por setor</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-diagram-project text-red-500 mt-1"></i> Atendimento organizado</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-users-slash text-red-500 mt-1"></i> Menos filas no WhatsApp</li>
+                    </ul>
+                    <a href="https://wa.me/seunumero" class="w-full py-3 bg-red-600 hover:bg-red-700 text-white rounded-xl text-center font-bold transition">Contratar Plano</a>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="endereco">
-            <i class="fas fa-map-marker-alt" style="color: var(--azul-industrial);"></i><br>
-            R. Tupy, 80 - São Marcos<br>
-            Joinville - SC, 89214-400
+    <!-- Footer Simples -->
+    <footer class="py-12 border-t border-white/5 text-center">
+        <div class="container mx-auto px-6">
+            <div class="text-xl font-bold tracking-tighter italic mb-4">
+                FLOW<span class="text-blue-500">BOT</span>
+            </div>
+            <p class="text-gray-500 text-sm">© 2024 FlowBot Automações. Todos os direitos reservados.</p>
         </div>
-        <p>&copy; 2024 Impact Usinagem e Caldeiraria - Todos os direitos reservados.</p>
     </footer>
 
 </body>
